@@ -62,6 +62,7 @@ export default {
           loveCount: 5,
         },
       ],
+      apiUrl: "https://pxk1lth4rb.execute-api.us-east-1.amazonaws.com/prod",
     };
   },
   async created() {
@@ -69,8 +70,7 @@ export default {
   },
   methods: {
     async fetchItems() {
-      const apiUrl = import.meta.env.VITE_APP_API_URL;
-      if (!apiUrl) {
+      if (!this.apiUrl) {
         console.error(
           "API URL is not set or is invalid. Using default data instead."
         );
@@ -79,7 +79,7 @@ export default {
       }
 
       try {
-        const response = await axios.get(`${apiUrl}/items`);
+        const response = await axios.get(`${this.apiUrl}/items`);
         this.items = response.data.filter(
           (item) => typeof item === "object" && item !== null
         );
@@ -89,14 +89,13 @@ export default {
       }
     },
     async showLove(item) {
-      const apiUrl = import.meta.env.VITE_APP_API_URL;
-      if (!apiUrl) {
+      if (!this.apiUrl) {
         console.error("API URL is not set. Cannot update love count for item.");
         return;
       }
 
       try {
-        await axios.put(`${apiUrl}/items`, { id: item.id });
+        await axios.put(`${this.apiUrl}/items`, { id: item.id });
         item.loveCount += 1;
       } catch (error) {
         console.error("Error updating love count:", error);
