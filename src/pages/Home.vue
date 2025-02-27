@@ -13,7 +13,6 @@
     </header>
 
     <!-- Section-->
-    <h1>Hi There</h1>
     <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
         <div
@@ -63,7 +62,7 @@ export default {
           loveCount: 5,
         },
       ],
-      apiUrl: "https://pxk1lth4rb.execute-api.us-east-1.amazonaws.com/prod",
+      apiUrl: "https://frofjlotzj.execute-api.us-east-1.amazonaws.com/prod",
     };
   },
   async created() {
