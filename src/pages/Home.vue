@@ -62,7 +62,7 @@ export default {
           loveCount: 5,
         },
       ],
-      apiUrl: "https://z6d2w90awh.execute-api.us-east-1.amazonaws.com/prod",
+      apiUrl: "https://ya3lcoo2gi.execute-api.us-east-1.amazonaws.com/prod",
     };
   },
   async created() {
