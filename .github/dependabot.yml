@@ -3,7 +3,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      # Dependabot has no "biweekly" interval; run on the 1st and 15th instead
+      interval: "cron"
+      cronjob: "0 9 1,15 * *"
     groups:
       all-dependencies:
         patterns:
