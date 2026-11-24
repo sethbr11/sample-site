@@ -15,6 +15,7 @@ export default defineConfig({
         {
           src: "src/images",
           dest: ".",
+          rename: { stripBase: 1 },
         },
       ],
     }),
